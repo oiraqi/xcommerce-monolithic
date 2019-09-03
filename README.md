@@ -12,7 +12,7 @@ The overarching XCommerce project is accessible here: https://github.com/oiraqi/
 
 **The *progress* folder**: In every semester, the author rewrites the code with his students. The *progress* folder reflects where they are now. It is reinitialized in the beginning of each Fall (September 1st) and Spring (January 1st).
 
-**How To**
+**Starting point**
 - Clone this repository
 - Depending on the stage you would like to work on, cd [ *initial* | *progress* | *final* ]
 - ./gradlew build
