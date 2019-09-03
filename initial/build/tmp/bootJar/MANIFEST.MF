@@ -1,8 +1,2 @@
 Manifest-Version: 1.0
-Start-Class: ma.aui.sse.it.xcommerce.monolithic.XCommerceMonolithicApp
- lication
-Spring-Boot-Classes: BOOT-INF/classes/
-Spring-Boot-Lib: BOOT-INF/lib/
-Spring-Boot-Version: 2.1.5.RELEASE
-Main-Class: org.springframework.boot.loader.JarLauncher
 
