@@ -13,12 +13,7 @@ The overarching XCommerce project is accessible here: https://github.com/oiraqi/
 **The *progress* folder**: In every semester, the author rewrites the code with his students. The *progress* folder reflects where they are now. It will be reinitialized by the end of the current semester.
 
 **Before You Start**
-- Make sure you have a recent version of Docker (docker.io)
-- Download the Dockerfile published here
-- Use it to build the corresponding Docker Ubuntu-based image
-- Run a Docker container based on your newly built Docker image
-- From within your Docker container, clone this Git repository
+- Clone this Git repository
 - Depending on the stage you would like to work on, cd [ *initial* | *progress* | *final* ]
-- Depending on the microservice you would like to work on, cd [ *catalog* | *order* | *customer* ]
 - ./gradlew build
 - There you go!
