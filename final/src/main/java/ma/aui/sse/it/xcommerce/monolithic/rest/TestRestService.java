@@ -18,10 +18,10 @@ import ma.aui.sse.it.xcommerce.monolithic.services.TestService;
 public class TestRestService {
 
     @Autowired
-    private TestService catalogService;
+    private TestService testService;
 
     @GetMapping("/init")
     public Iterable<Product> init(){
-        return catalogService.init();
+        return testService.init();
     }
 }
