@@ -99,12 +99,12 @@ public class TestService {
             createProduct("XHR", "108970707", brands[1].getId(), level1Categories[1].getId(), 4000, 5, 200),
             //createProduct("Spark", "", brands[5], level1Categories[3], 15000, 2, 4200),
         };
-        Review[] reviews = {
-            createReview("Good product", (float)4.5, products[0]),
-            createReview("Pretty good product", (float)3.5, products[0]),
-            createReview("Good product", (float)4.5, products[1]),
-            createReview("Excellent product", 5, products[1])
-        };
+        //Review[] reviews = {
+        createReview("Good product", (float)4.5, products[0]);
+        createReview("Pretty good product", (float)3.5, products[0]);
+        createReview("Good product", (float)4.5, products[1]);
+        createReview("Excellent product", 5, products[1]);
+        //};
         customerRepository.save(new Customer("Omar", "IRAQI", "o.iraqi@gmail.com", "144, Perles"));
         return productRepository.findAll();
     }

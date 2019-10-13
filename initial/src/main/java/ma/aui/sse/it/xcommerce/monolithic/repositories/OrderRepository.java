@@ -1,10 +1,11 @@
 package ma.aui.sse.it.xcommerce.monolithic.repositories;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Order;
-
 import java.util.List;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+
+import ma.aui.sse.it.xcommerce.monolithic.entities.Order;
 
 /**
  *
