@@ -46,9 +46,7 @@ public class ShoppingCart implements Serializable {
         if(selectedProducts.get(product) != null)
             currentQuantity = selectedProducts.get(product);
         
-        if(quantity + currentQuantity < 0)
-            quantity = -1 * currentQuantity;
-        if(quantity + currentQuantity == 0)
+        if(quantity + currentQuantity <= 0)
             selectedProducts.remove(product);
         else
             selectedProducts.put(product, quantity + currentQuantity);
