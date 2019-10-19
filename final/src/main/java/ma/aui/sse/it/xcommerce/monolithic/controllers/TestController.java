@@ -15,7 +15,7 @@ import ma.aui.sse.it.xcommerce.monolithic.services.TestService;
  */
 @RestController
 @RequestMapping("/test")
-public class TestRestService {
+public class TestController {
 
     @Autowired
     private TestService testService;

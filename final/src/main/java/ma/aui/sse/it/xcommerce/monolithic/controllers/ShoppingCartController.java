@@ -16,7 +16,7 @@ import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
  */
 @RestController
 @RequestMapping("/shoppingCart")
-public class ShoppingCartRestService {
+public class ShoppingCartController {
 
     @Autowired
     private ShoppingCartService shoppingCartService;
