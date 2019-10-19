@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ma.aui.sse.it.xcommerce.monolithic.repositories;
+package ma.aui.sse.it.xcommerce.monolithic.data.repositories;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Product;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
 
 import java.util.List;
 

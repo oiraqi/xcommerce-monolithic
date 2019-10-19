@@ -1,9 +1,11 @@
-package ma.aui.sse.it.xcommerce.monolithic.entities;
+package ma.aui.sse.it.xcommerce.monolithic.data;
 
 import java.io.Serializable;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Map.Entry;
+
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
 
 
 /**
