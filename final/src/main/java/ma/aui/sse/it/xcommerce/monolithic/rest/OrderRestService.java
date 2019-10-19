@@ -11,8 +11,6 @@ import java.util.List;
 import ma.aui.sse.it.xcommerce.monolithic.entities.Order;
 import ma.aui.sse.it.xcommerce.monolithic.entities.OrderStatus;
 import ma.aui.sse.it.xcommerce.monolithic.services.OrderService;
-import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
-import ma.aui.sse.it.xcommerce.monolithic.services.CustomerService;
 
 /**
  *
@@ -24,10 +22,6 @@ public class OrderRestService{
 
     @Autowired
     private OrderService orderService;
-    @Autowired 
-    private ShoppingCartService shoppingCartService;
-    @Autowired
-    private CustomerService customerService;
 
 
     @GetMapping("/list")
@@ -41,8 +35,7 @@ public class OrderRestService{
     public void checkout() {
         //Retrieve customerId from JWT
         long customerId = 1; //To be removed
-        orderService.checkout(shoppingCartService.getShoppingCart(customerId), 
-                customerService.getCustomer(customerId));
+        orderService.checkout(customerId);
     }
 
     @GetMapping("/backOffice/list")

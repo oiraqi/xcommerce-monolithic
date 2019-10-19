@@ -1,0 +1,13 @@
+@startuml SequenceDiagram
+actor User as U
+participant "REST-capable\nClient" as RCC
+participant "REST-auto-exposed\nRepository" as R
+collections Entities as E
+database Database as DB
+U -> RCC : uses
+RCC -> R : remotely calls
+R -> E : manages
+E <--> DB : mapped to
+R --> RCC : remotely returns
+RCC --> U : serves
+@enduml
