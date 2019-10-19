@@ -1,4 +1,4 @@
-package ma.aui.sse.it.xcommerce.monolithic.entities;
+package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
