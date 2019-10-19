@@ -1,4 +1,4 @@
-package ma.aui.sse.it.xcommerce.monolithic.rest;
+package ma.aui.sse.it.xcommerce.monolithic.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Order;
-import ma.aui.sse.it.xcommerce.monolithic.entities.OrderStatus;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Order;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.OrderStatus;
 import ma.aui.sse.it.xcommerce.monolithic.services.OrderService;
 
 /**

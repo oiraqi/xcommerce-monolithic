@@ -1,4 +1,4 @@
-package ma.aui.sse.it.xcommerce.monolithic.entities;
+package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package ma.aui.sse.it.xcommerce.monolithic.repositories;
+package ma.aui.sse.it.xcommerce.monolithic.data.repositories;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Order;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Order;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;

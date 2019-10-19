@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Customer;
-import ma.aui.sse.it.xcommerce.monolithic.entities.Order;
-import ma.aui.sse.it.xcommerce.monolithic.entities.OrderStatus;
-import ma.aui.sse.it.xcommerce.monolithic.entities.ShoppingCart;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.CustomerRepository;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.OrderRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Customer;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Order;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.OrderStatus;
+import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.CustomerRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.OrderRepository;
 
 /**
  *

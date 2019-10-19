@@ -1,4 +1,4 @@
-package ma.aui.sse.it.xcommerce.monolithic.entities;
+package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
 import java.util.List;
 import java.util.Map.Entry;
@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
 
 /**
  *

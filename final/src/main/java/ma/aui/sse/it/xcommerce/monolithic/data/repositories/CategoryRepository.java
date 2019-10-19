@@ -1,6 +1,6 @@
-package ma.aui.sse.it.xcommerce.monolithic.repositories;
+package ma.aui.sse.it.xcommerce.monolithic.data.repositories;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Category;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Category;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -3,16 +3,16 @@ package ma.aui.sse.it.xcommerce.monolithic.services;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ma.aui.sse.it.xcommerce.monolithic.entities.Brand;
-import ma.aui.sse.it.xcommerce.monolithic.entities.Category;
-import ma.aui.sse.it.xcommerce.monolithic.entities.Product;
-import ma.aui.sse.it.xcommerce.monolithic.entities.Review;
-import ma.aui.sse.it.xcommerce.monolithic.entities.Customer;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.BrandRepository;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.CategoryRepository;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.ProductRepository;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.ReviewRepository;
-import ma.aui.sse.it.xcommerce.monolithic.repositories.CustomerRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Brand;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Category;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Review;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Customer;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.BrandRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.CategoryRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.ReviewRepository;
+import ma.aui.sse.it.xcommerce.monolithic.data.repositories.CustomerRepository;
 
 /**
  *
