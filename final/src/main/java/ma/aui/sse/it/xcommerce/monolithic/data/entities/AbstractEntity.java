@@ -41,7 +41,7 @@ public abstract class AbstractEntity implements Serializable{
     @LastModifiedBy
     protected String lastModifiedBy;
 
-    boolean active = true;
+    protected boolean active = true;
 
     public Long getId(){
         return id;

@@ -40,7 +40,6 @@ public class Product extends AbstractEntity {
 
     private int quantity;
     private float weight;
-    private boolean active;    
 
     protected Product() { }
 
@@ -94,14 +93,6 @@ public class Product extends AbstractEntity {
 
     public Category getCategory() {
         return category;
-    }
-
-    public void toggleActive() {
-        active = !active;
-    }
-
-    public boolean isActive() {
-        return active;
     }
 
     public Brand getBrand() {

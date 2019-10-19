@@ -1,11 +1,5 @@
 package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedBy;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,6 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
  *
@@ -41,6 +41,8 @@ public abstract class AbstractEntity implements Serializable{
     @LastModifiedBy
     protected String lastModifiedBy;
 
+    protected boolean active = true;
+
     public Long getId(){
         return id;
     }
@@ -59,5 +61,17 @@ public abstract class AbstractEntity implements Serializable{
 
     public String getLastModifiedBy(){
         return lastModifiedBy;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public void toggleActive() {
+        this.active = !this.active;
     }
 }
