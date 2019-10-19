@@ -1,0 +1,28 @@
+@startuml SequenceDiagram
+actor User
+participant "REST-uncapable Web Client"
+participant "Web Front-end"
+participant "REST Controller"
+participant Service
+participant Repository_i
+participant Repository_j
+collections Entities_i
+collections Entities_j
+database Database
+User -> "REST-uncapable Web Client" : uses
+"REST-uncapable Web Client" -> "Web Front-end" : HTTP request
+"Web Front-end" -> "REST Controller" : remotely calls
+"REST Controller" -> Service : calls
+Service -> Repository_i : calls
+Repository_i -> Entities_i : manages
+Entities_i <--> Database : mapped to
+Repository_i --> Service : returns
+Service -> Repository_j : calls
+Repository_j -> Entities_j : manages
+Entities_j <--> Database : mapped to
+Repository_j --> Service : returns
+Service --> "REST Controller" : returns
+"REST Controller" --> "Web Front-end" : remotely returns
+"Web Front-end" --> "REST-uncapable Web Client" : HTTP reply
+"REST-uncapable Web Client" --> User : serves
+@enduml

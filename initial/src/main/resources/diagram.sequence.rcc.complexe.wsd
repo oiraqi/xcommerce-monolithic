@@ -1,0 +1,25 @@
+@startuml SequenceDiagram
+actor User
+participant "REST-capable Client"
+participant "REST Controller"
+participant Service
+participant Repository_i
+participant Repository_j
+collections Entities_i
+collections Entities_j
+database Database
+User -> "REST-capable Client" : uses
+"REST-capable Client" -> "REST Controller" : remotely calls
+"REST Controller" -> Service : calls
+Service -> Repository_i : calls
+Repository_i -> Entities_i : manages
+Entities_i <--> Database : mapped to
+Repository_i --> Service : returns
+Service -> Repository_j : calls
+Repository_j -> Entities_j : manages
+Entities_j <--> Database : mapped to
+Repository_j --> Service : returns
+Service --> "REST Controller" : returns
+"REST Controller" --> "REST-capable Client" : remotely returns
+"REST-capable Client" --> User : serves
+@enduml

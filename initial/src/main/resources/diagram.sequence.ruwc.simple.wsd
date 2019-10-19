@@ -1,0 +1,16 @@
+@startuml SequenceDiagram
+actor User
+participant "REST-uncapable Web Client"
+participant "Web Front-end"
+participant "REST-auto-exposed Repository"
+collections Entities
+database Database
+User -> "REST-uncapable Web Client" : uses
+"REST-uncapable Web Client" -> "Web Front-end" : HTTP request
+"Web Front-end" -> "REST-auto-exposed Repository" : remotely calls
+"REST-auto-exposed Repository" -> Entities : manages
+Entities <--> Database : mapped to
+"REST-auto-exposed Repository" --> "Web Front-end" : remotely returns
+"Web Front-end" --> "REST-uncapable Web Client" : HTTP reply
+"REST-uncapable Web Client" --> User : serves
+@enduml
