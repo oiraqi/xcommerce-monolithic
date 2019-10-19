@@ -41,6 +41,8 @@ public abstract class AbstractEntity implements Serializable{
     @LastModifiedBy
     protected String lastModifiedBy;
 
+    boolean active = true;
+
     public Long getId(){
         return id;
     }
@@ -59,5 +61,17 @@ public abstract class AbstractEntity implements Serializable{
 
     public String getLastModifiedBy(){
         return lastModifiedBy;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public void toggleActive() {
+        this.active = !this.active;
     }
 }
