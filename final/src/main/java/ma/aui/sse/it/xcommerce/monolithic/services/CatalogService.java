@@ -1,25 +1,23 @@
 package ma.aui.sse.it.xcommerce.monolithic.services;
 
-import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Brand;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Category;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Review;
-import ma.aui.sse.it.xcommerce.monolithic.data.entities.Customer;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.BrandRepository;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.CategoryRepository;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.ReviewRepository;
-import ma.aui.sse.it.xcommerce.monolithic.data.repositories.CustomerRepository;
 
 /**
  *
  * @author Omar IRAQI
  */
 @Service
-public class TestService {
+public class CatalogService {
 
     @Autowired
     private ProductRepository productRepository;
@@ -32,9 +30,6 @@ public class TestService {
 
     @Autowired
     private ReviewRepository reviewRepository;
-
-    @Autowired
-    private CustomerRepository customerRepository;
 
     public Brand createBrand(String name){
         Brand brand = new Brand(name);
@@ -68,10 +63,6 @@ public class TestService {
     }
 
     public Iterable<Product> init(){
-        /*productRepository.deleteAll();
-        brandRepository.deleteAll();
-        categoryRepository.deleteAll();
-        orderRepository.deleteAll();*/
 
         Brand[] brands  = { 
             createBrand("Oppo"), 
@@ -81,10 +72,12 @@ public class TestService {
             createBrand("Specialized"),
             createBrand("Scott")
         };
+        
         Category[] rootCategories = {
             createCategory("Electronics"),
             createCategory("Bikes")
         };
+        
         Category[] level1Categories = {
             createCategory("Phones", rootCategories[0].getId()),
             createCategory("Tabs", rootCategories[0].getId()),
@@ -93,19 +86,18 @@ public class TestService {
             createCategory("XR", rootCategories[1].getId()),
             createCategory("Fat Bikes", rootCategories[1].getId())
         };
+        
         Product[] products = {
             createProduct("F1", "647654765", brands[0].getId(), level1Categories[0].getId(), 4000, 5, 200),
             createProduct("F3", "643643663", brands[0].getId(), level1Categories[0].getId(), 2500, 5, 200),
-            createProduct("XHR", "108970707", brands[1].getId(), level1Categories[1].getId(), 4000, 5, 200),
-            //createProduct("Spark", "", brands[5], level1Categories[3], 15000, 2, 4200),
+            createProduct("XHR", "108970707", brands[1].getId(), level1Categories[1].getId(), 4000, 5, 200)
         };
-        //Review[] reviews = {
+        
         createReview("Good product", (float)4.5, products[0]);
         createReview("Pretty good product", (float)3.5, products[0]);
         createReview("Good product", (float)4.5, products[1]);
         createReview("Excellent product", 5, products[1]);
-        //};
-        customerRepository.save(new Customer("Omar", "IRAQI", "o.iraqi@gmail.com", "144, Perles"));
+
         return productRepository.findAll();
     }
 }

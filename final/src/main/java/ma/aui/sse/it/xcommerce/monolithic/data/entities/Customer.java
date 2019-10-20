@@ -23,10 +23,19 @@ public class Customer extends AbstractEntity{
 
     @NotNull
     protected String address;
+
+    @NotNull
+    protected String login;
+
+    @NotNull
+    protected String password;
         
     protected Customer(){ }
 
-    public Customer(String firstName, String lastName, String emailAddress, String address){
+    public Customer(String login, String password, String firstName, String lastName,
+                    String emailAddress, String address){
+        this.login = login;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -36,7 +45,6 @@ public class Customer extends AbstractEntity{
     public String getFirstName() {
         return firstName;
     }
-
 
     public String getEmailAddress() {
         return emailAddress;
@@ -70,6 +78,22 @@ public class Customer extends AbstractEntity{
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }

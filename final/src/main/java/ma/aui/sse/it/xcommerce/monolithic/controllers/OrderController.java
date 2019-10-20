@@ -17,7 +17,7 @@ import ma.aui.sse.it.xcommerce.monolithic.services.OrderService;
  * @author Omar IRAQI
  */
 @RestController
-@RequestMapping("/order")
+@RequestMapping("/rest/order")
 public class OrderController{
 
     @Autowired
