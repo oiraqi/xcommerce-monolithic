@@ -24,7 +24,7 @@ public class Order extends AbstractEntity{
 
     @ManyToOne
     @NotNull
-    protected Customer customer;
+    protected User user;
 
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     protected List<OrderLine> orderLines;
@@ -36,8 +36,8 @@ public class Order extends AbstractEntity{
 
 	protected Order(){ }
 
-    public Order(ShoppingCart shoppingCart, Customer customer){
-        this.customer = customer;
+    public Order(ShoppingCart shoppingCart, User user){
+        this.user = user;
         if(shoppingCart.getSelectedProducts() != null){
             Iterator<Entry<Product, Integer>> it = shoppingCart.getSelectedProducts().entrySet().iterator();
             while(it.hasNext()){
@@ -57,8 +57,8 @@ public class Order extends AbstractEntity{
         //use JavaMail API to send a notification to the customer by email
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public User getUser() {
+        return user;
     }
 
     public OrderStatus getStatus() {

@@ -20,18 +20,18 @@ public class ShoppingCartService {
     private ProductRepository productRepository;
 
     @Cacheable(value = "ShoppingCart")
-    public ShoppingCart getShoppingCart(long customerId){
+    public ShoppingCart getShoppingCart(long userId){
         return new ShoppingCart();
     }
 
-    @CachePut(value = "ShoppingCart", key = "#customerId")
-    public ShoppingCart addProduct(ShoppingCart shoppingCart, long customerId, long productId, int quantity){
+    @CachePut(value = "ShoppingCart", key = "#userId")
+    public ShoppingCart addProduct(ShoppingCart shoppingCart, long userId, long productId, int quantity){
         Product product = productRepository.findById(productId).get();
         shoppingCart.addProduct(product, quantity);
         return shoppingCart;
     }
 
-    @CachePut(value = "ShoppingCart", key = "#customerId")
+    @CachePut(value = "ShoppingCart", key = "#userId")
     public ShoppingCart removeProduct(ShoppingCart shoppingCart, long customerId, long productId, int quantity){
         Product product = productRepository.findById(productId).get();
         shoppingCart.removeProduct(product, quantity);

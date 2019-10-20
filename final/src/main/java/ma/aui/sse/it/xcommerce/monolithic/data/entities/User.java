@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
  * @author Omar IRAQI
  */
 @Entity
-public class Customer extends AbstractEntity{
+public class User extends AbstractEntity{
 
     private static final long serialVersionUID = -2323571384056059081L;
 
@@ -24,9 +24,9 @@ public class Customer extends AbstractEntity{
     @NotNull
     protected String address;
         
-    protected Customer(){ }
+    protected User(){ }
 
-    public Customer(String firstName, String lastName,
+    public User(String firstName, String lastName,
                     String emailAddress, String address){
         this.firstName = firstName;
         this.lastName = lastName;
