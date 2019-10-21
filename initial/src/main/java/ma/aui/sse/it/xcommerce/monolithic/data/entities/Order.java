@@ -1,14 +1,15 @@
 package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
-import java.util.Iterator;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
@@ -18,6 +19,7 @@ import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
  * @author Omar IRAQI
  */
 @Entity
+@Table(name="\"order\"")
 public class Order extends AbstractEntity{
     
     private static final long serialVersionUID = 3959935433240472748L;

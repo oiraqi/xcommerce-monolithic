@@ -1,6 +1,7 @@
 package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
  * @author Omar IRAQI
  */
 @Entity
+@Table(name="\"user\"")
 public class User extends AbstractEntity{
 
     private static final long serialVersionUID = -2323571384056059081L;
