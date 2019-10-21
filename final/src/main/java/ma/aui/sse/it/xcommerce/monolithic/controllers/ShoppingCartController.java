@@ -2,11 +2,13 @@ package ma.aui.sse.it.xcommerce.monolithic.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ma.aui.sse.it.xcommerce.monolithic.data.DataPack;
 import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
 
@@ -28,29 +30,30 @@ public class ShoppingCartController {
         return shoppingCartService.getShoppingCart(userId);
     }
 
-    @GetMapping("/addProduct")
-    public ShoppingCart addProduct(@RequestParam long productId, 
-                        @RequestParam int quantity){
+    @PatchMapping("/addProductQuantity")
+    public ShoppingCart addProductQuantity(@RequestBody DataPack dataPack){
         //Retrieve userId from JWT
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.addProduct(shoppingCart, userId, productId, quantity);
+        return shoppingCartService.addProductQuantity(shoppingCart, userId,
+                                                dataPack.getProductId(),
+                                                dataPack.getQuantity());
     }
 
-    @GetMapping("/decreaseProductQuantity")
-    public ShoppingCart removeProduct(@RequestParam long productId, 
-                        @RequestParam int quantity){
+    @PatchMapping("/removeProductQuantity")
+    public ShoppingCart removeProductQuantity(@RequestBody DataPack dataPack){
         //Retrieve userId from JWT
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProduct(shoppingCart, userId, productId, quantity);
+        return shoppingCartService.removeProductQuantity(shoppingCart, userId, dataPack.getProductId(),
+                                                    dataPack.getQuantity());
     }
 
-    @GetMapping("/removeProduct")
-    public ShoppingCart removeProduct(@RequestParam long productId){
+    @PatchMapping("/removeProduct")
+    public ShoppingCart removeProduct(@RequestBody DataPack dataPack){
         //Retrieve userId from JWT
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProduct(shoppingCart, userId, productId);
+        return shoppingCartService.removeProduct(shoppingCart, userId, dataPack.getProductId());
     }
 }
