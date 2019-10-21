@@ -1,5 +1,5 @@
 # XCommerce Monolithic - Spring
-This is the core module of the enterprise-class XCommerce application based on a monolithic-mvc-soa architecture. It is written in Java and leverages Spring Boot as a highly productive, opinionated enterprise application development and production environment. Spring Boot orchestrates several technologies powering XCommerce Monolithic, namely JPA (on top of Hibernare and MySQL), Redis and REST.
+This is the core module of the enterprise-class XCommerce application based on a monolithic-mvc-soa architecture. It is written in Java and leverages Spring Boot as a highly productive, opinionated enterprise application development and production environment. Spring Boot orchestrates several technologies powering XCommerce Monolithic, namely JPA (on top of Hibernare and Postgres), Redis and REST.
 
 The overarching XCommerce project is accessible here: https://github.com/oiraqi/xcommerce. Other sibiling sub-projects are:
 - XCommerce Web JSF: https://github.com/oiraqi/xcommerce-microservices
@@ -17,3 +17,11 @@ The overarching XCommerce project is accessible here: https://github.com/oiraqi/
 - Depending on the stage you would like to work on, cd [ *initial* | *progress* | *final* ]
 - ./gradlew build
 - There you go!
+
+**You need**
+- Docker installed
+- docker pull postgres
+- docker pull redis
+- docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -d postgres
+- Create a database called *xcommerce* on your *postgres-container*
+- docker run --name redis-container -d redis
