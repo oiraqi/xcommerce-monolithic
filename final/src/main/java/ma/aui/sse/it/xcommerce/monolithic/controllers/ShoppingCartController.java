@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.test.context.support.WithMockUser;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.DataPack;
 import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
@@ -19,6 +20,7 @@ import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
  */
 @RestController
 @RequestMapping("/rest/shoppingCart")
+@WithMockUser
 public class ShoppingCartController {
 
     @Autowired
