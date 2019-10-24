@@ -19,8 +19,8 @@ The overarching XCommerce project is accessible here: https://github.com/oiraqi/
 
 **You need**
 - Docker installed
-- docker pull postgres
 - docker pull redis
+- docker pull postgres
+- docker run --name redis-container -d redis
 - docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -d postgres
 - Create a database called *xcommerce* on your *postgres-container*
-- docker run --name redis-container -d redis
