@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.test.context.support.WithMockUser;
 
-import ma.aui.sse.it.xcommerce.monolithic.data.DataPack;
+import ma.aui.sse.it.xcommerce.monolithic.data.DTO;
 import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
 
@@ -21,7 +21,7 @@ import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
 @RestController
 @RequestMapping("/rest/shoppingCart")
 @WithMockUser
-public class ShoppingCartController {
+public class ShoppingCartRestController {
 
     @Autowired
     private ShoppingCartService shoppingCartService;
@@ -34,33 +34,33 @@ public class ShoppingCartController {
         return shoppingCartService.getShoppingCart(userId);
     }
 
-    @PatchMapping("/addProductQuantity")
-    public ShoppingCart addProductQuantity(@RequestBody DataPack dataPack){
+    @PatchMapping("/addProduct")
+    public ShoppingCart addProduct(@RequestBody DTO dto){
         //Retrieve userId from JWT-base security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.addProductQuantity(shoppingCart, userId,
-                                                dataPack.getProductId(),
-                                                dataPack.getQuantity());
+        return shoppingCartService.addProduct(shoppingCart, userId,
+                                                dto.getProductId(),
+                                                dto.getQuantity());
     }
 
-    @PatchMapping("/removeProductQuantity")
-    public ShoppingCart removeProductQuantity(@RequestBody DataPack dataPack){
+    @PatchMapping("/decreaseProductQuantity")
+    public ShoppingCart decreaseProductQuantity(@RequestBody DTO dto){
         //Retrieve userId from JWT-base security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProductQuantity(shoppingCart, userId, dataPack.getProductId(),
-                                                    dataPack.getQuantity());
+        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getProductId(),
+                                                    dto.getQuantity());
     }
 
     @PatchMapping("/removeProduct")
-    public ShoppingCart removeProduct(@RequestBody DataPack dataPack){
+    public ShoppingCart removeProduct(@RequestBody DTO dto){
         //Retrieve userId from JWT-base security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProduct(shoppingCart, userId, dataPack.getProductId());
+        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getProductId());
     }
 }

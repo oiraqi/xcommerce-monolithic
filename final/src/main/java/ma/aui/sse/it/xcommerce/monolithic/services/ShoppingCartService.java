@@ -25,14 +25,14 @@ public class ShoppingCartService {
     }
 
     @CachePut(value = "ShoppingCart", key = "#userId")
-    public ShoppingCart addProductQuantity(ShoppingCart shoppingCart, long userId, long productId, int quantity){
+    public ShoppingCart addProduct(ShoppingCart shoppingCart, long userId, long productId, int quantity){
         Product product = productRepository.findById(productId).get();
         shoppingCart.addProduct(product, quantity);
         return shoppingCart;
     }
 
     @CachePut(value = "ShoppingCart", key = "#userId")
-    public ShoppingCart removeProductQuantity(ShoppingCart shoppingCart, long userId, long productId, int quantity){
+    public ShoppingCart removeProduct(ShoppingCart shoppingCart, long userId, long productId, int quantity){
         Product product = productRepository.findById(productId).get();
         shoppingCart.removeProduct(product, quantity);
         return shoppingCart;

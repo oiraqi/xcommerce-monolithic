@@ -1,11 +1,11 @@
 package ma.aui.sse.it.xcommerce.monolithic.data;
 
-public class DataPack {
+public class DTO {
 
     private long productId;
     private int quantity;
 
-    public DataPack() {
+    public DTO() {
 
     }
 
