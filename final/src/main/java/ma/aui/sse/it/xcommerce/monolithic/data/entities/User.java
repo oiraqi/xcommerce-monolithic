@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 /**
  *
  * @author Omar IRAQI
@@ -37,7 +39,7 @@ public class User extends AbstractEntity{
     public User(String username, String password, String firstName, String lastName,
                 String emailAddress, String address){
         this.username = username;
-        this.password = password; //To be hashed
+        this.password = new BCryptPasswordEncoder().encode(password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;

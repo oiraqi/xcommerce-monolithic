@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
+import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
 
 /**
  *

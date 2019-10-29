@@ -1,4 +1,4 @@
-package ma.aui.sse.it.xcommerce.monolithic.data;
+package ma.aui.sse.it.xcommerce.monolithic.data.dtos;
 
 import java.io.Serializable;
 import java.util.Hashtable;

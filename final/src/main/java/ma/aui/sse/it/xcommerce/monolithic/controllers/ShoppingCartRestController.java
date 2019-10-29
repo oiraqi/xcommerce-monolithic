@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.test.context.support.WithMockUser;
 
-import ma.aui.sse.it.xcommerce.monolithic.data.DTO;
-import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
+import ma.aui.sse.it.xcommerce.monolithic.data.dtos.Product;
+import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
 
 /**
@@ -28,15 +28,15 @@ public class ShoppingCartRestController {
 
     @GetMapping("/get")
     public ShoppingCart getShoppingCart(/* Authentication auth */){
-        //Retrieve userId from JWT-base security context
+        //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         return shoppingCartService.getShoppingCart(userId);
     }
 
     @PatchMapping("/addProduct")
-    public ShoppingCart addProduct(@RequestBody DTO dto){
-        //Retrieve userId from JWT-base security context
+    public ShoppingCart addProduct(@RequestBody Product dto){
+        //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
@@ -46,8 +46,8 @@ public class ShoppingCartRestController {
     }
 
     @PatchMapping("/decreaseProductQuantity")
-    public ShoppingCart decreaseProductQuantity(@RequestBody DTO dto){
-        //Retrieve userId from JWT-base security context
+    public ShoppingCart decreaseProductQuantity(@RequestBody Product dto){
+        //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
@@ -56,8 +56,8 @@ public class ShoppingCartRestController {
     }
 
     @PatchMapping("/removeProduct")
-    public ShoppingCart removeProduct(@RequestBody DTO dto){
-        //Retrieve userId from JWT-base security context
+    public ShoppingCart removeProduct(@RequestBody Product dto){
+        //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);

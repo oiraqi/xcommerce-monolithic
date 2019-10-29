@@ -1,11 +1,15 @@
-package ma.aui.sse.it.xcommerce.monolithic.data;
+package ma.aui.sse.it.xcommerce.monolithic.data.dtos;
 
-public class DTO {
+import java.io.Serializable;
 
+public class Product implements Serializable{
+
+    private static final long serialVersionUID = 781803052368469398L;
     private long productId;
     private int quantity;
 
-    public DTO() {
+
+    public Product() {
 
     }
 

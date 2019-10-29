@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.User;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Order;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.OrderStatus;
-import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
+import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.OrderRepository;
 

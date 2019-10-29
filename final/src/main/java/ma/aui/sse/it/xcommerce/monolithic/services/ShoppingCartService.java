@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.cache.annotation.CachePut;
 
-import ma.aui.sse.it.xcommerce.monolithic.data.ShoppingCart;
+import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository;
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
 
