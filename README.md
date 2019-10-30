@@ -1,10 +1,8 @@
 # XCommerce Monolithic - Spring
-This is the core module of the enterprise-class XCommerce application based on a monolithic-mvc-soa architecture. It is written in Java and leverages Spring Boot as a highly productive, opinionated enterprise application development and production environment. Spring Boot orchestrates several technologies powering XCommerce Monolithic, namely JPA (on top of Hibernare and PostgreSQL), Redis and REST.
+This is the server-side of the enterprise-class XCommerce application based on a monolithic-mvc-soa architecture. It is written in Java and leverages Spring Boot as a highly productive, opinionated enterprise application development and production environment. Spring Boot orchestrates several technologies powering XCommerce Monolithic, namely JPA, Hibernare, PostgreSQL, Redis, REST and JWT.
 
 The overarching XCommerce project is accessible here: https://github.com/oiraqi/xcommerce. Other sibiling sub-projects are:
-- XCommerce Web JSF: https://github.com/oiraqi/xcommerce-microservices
-- XCommerce Web Django: https://github.com/oiraqi/xcommerce-web-django
-- XCommerce Web Node/Express: https://github.com/oiraqi/xcommerce-web-node
+- XCommerce Microservices: https://github.com/oiraqi/xcommerce-microservices
 - XCommerce PWA Angular: https://github.com/oiraqi/xcommerce-web-angular
 
 **You're welcome to contrbute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
@@ -17,10 +15,10 @@ The overarching XCommerce project is accessible here: https://github.com/oiraqi/
 - ./gradlew build
 - There you go!
 
-**You need**
-- Docker installed
+**You need to install Docker, then run these commands**
 - docker pull redis
 - docker pull postgres
-- docker run --name redis-container -d redis
-- docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -d postgres
-- Create a database called *xcommerce* on your *postgres-container*
+- docker run --name redis-container -p 6379:6379 -d redis
+- docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+- docker exec -it postgres-container psql -U postgres
+- create database xcommerce
