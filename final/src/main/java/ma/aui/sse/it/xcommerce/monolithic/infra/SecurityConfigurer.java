@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -28,11 +29,14 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     }
 
     protected void configure(HttpSecurity http) throws Exception {
-        http.cors().and()
-            .csrf().disable()
+        http.csrf().disable()
             .authorizeRequests()
-            .antMatchers("/rest").permitAll()
+            .antMatchers(HttpMethod.GET, "/rest/catalog/**").permitAll()
+            .antMatchers("/rest/catalog/**").hasRole("ADMIN")
+            .antMatchers("/rest/user/authenticate").permitAll()
+            //.antMatchers("/rest/user/**").hasRole("ADMIN")
             .and()
+            .addFilter(new JwtInterceptingFilter())
             .sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }

@@ -7,19 +7,19 @@ public class User implements Serializable{
     private static final long serialVersionUID = -2789798823602463949L;
     private String username;
     private String password;
-    private String passwordConfirmation;
+    private String newPassword;
     private String firstName;
     private String lastName;
     private String emailAddress;
-    private String emailAddressConfirmation;
     private String address;
 
 
     protected User() { }
 
-    public User(String username, String firstName, String lastName,
+    public User(String username, String password, String firstName, String lastName,
                 String emailAddress, String address){
         this.username = username;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
@@ -74,19 +74,11 @@ public class User implements Serializable{
         this.address = address;
     }
 
-    public String getPasswordConfirmation() {
-        return passwordConfirmation;
+    public String getNewPassword() {
+        return newPassword;
     }
 
-    public void setPasswordConfirmation(String passwordConfirmation) {
-        this.passwordConfirmation = passwordConfirmation;
-    }
-
-    public String getEmailAddressConfirmation() {
-        return emailAddressConfirmation;
-    }
-
-    public void setEmailAddressConfirmation(String emailAddressConfirmation) {
-        this.emailAddressConfirmation = emailAddressConfirmation;
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 }

@@ -9,9 +9,7 @@ public class Product implements Serializable{
     private int quantity;
 
 
-    public Product() {
-
-    }
+    protected Product() { }
 
     public long getProductId() {
         return productId;
