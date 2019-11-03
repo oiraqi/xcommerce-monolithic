@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.test.context.support.WithMockUser;
 
-import ma.aui.sse.it.xcommerce.monolithic.data.dtos.Product;
+import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
 import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
 
@@ -41,7 +41,7 @@ public class ShoppingCartRestController {
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
         return shoppingCartService.addProduct(shoppingCart, userId,
-                                                dto.getProductId(),
+                                                dto.getId(),
                                                 dto.getQuantity());
     }
 
@@ -51,7 +51,7 @@ public class ShoppingCartRestController {
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getProductId(),
+        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getId(),
                                                     dto.getQuantity());
     }
 
@@ -61,6 +61,6 @@ public class ShoppingCartRestController {
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getProductId());
+        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getId());
     }
 }

@@ -29,13 +29,13 @@ public class ShoppingCart implements Serializable {
     public void addProduct(Product product, int quantity){
         if(quantity <= 0)
             return;
-        updateProduct(product, quantity);
+        updateProductQuantity(product, quantity);
     }
 
     public void removeProduct(Product product, int quantity){
         if(quantity <= 0)
             return;
-        updateProduct(product, -1 * quantity);
+        updateProductQuantity(product, -1 * quantity);
     }
 
     public void removeProduct(Product product){
@@ -43,7 +43,7 @@ public class ShoppingCart implements Serializable {
             removeProduct(product, selectedProducts.get(product));
     }
 
-    private void updateProduct(Product product, int quantity) {
+    private void updateProductQuantity(Product product, int quantity) {
         int currentQuantity = 0;
         if(selectedProducts.get(product) != null)
             currentQuantity = selectedProducts.get(product);

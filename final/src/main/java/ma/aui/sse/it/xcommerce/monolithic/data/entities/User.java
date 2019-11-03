@@ -3,7 +3,6 @@ package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
@@ -21,6 +20,8 @@ public class User extends AbstractEntity{
 
     @NotNull
     protected String password;
+
+    protected transient String newPassword;
     
     @NotNull
     protected String firstName;
@@ -98,5 +99,13 @@ public class User extends AbstractEntity{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 }

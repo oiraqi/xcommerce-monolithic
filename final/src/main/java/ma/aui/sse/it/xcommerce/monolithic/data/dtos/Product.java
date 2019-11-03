@@ -5,18 +5,18 @@ import java.io.Serializable;
 public class Product implements Serializable{
 
     private static final long serialVersionUID = 781803052368469398L;
-    private long productId;
+    private long id;
     private int quantity;
 
 
     protected Product() { }
 
-    public long getProductId() {
-        return productId;
+    public long getId() {
+        return id;
     }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
+    public void setProductId(long id) {
+        this.id = id;
     }
 
     public int getQuantity() {

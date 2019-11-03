@@ -21,24 +21,17 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     private DataSource dataSource;
 
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
-        authenticationManagerBuilder
-            .jdbcAuthentication()
-            .dataSource(dataSource)
-            .usersByUsernameQuery("select username, password, active as enabled from \"user\" where username = ?")
-            .authoritiesByUsernameQuery("select username, authority from authority where username = ?");
+        authenticationManagerBuilder.jdbcAuthentication().dataSource(dataSource)
+                .usersByUsernameQuery("select username, password, active as enabled from \"user\" where username = ?")
+                .authoritiesByUsernameQuery("select username, authority from authority where username = ?");
     }
 
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
-            .authorizeRequests()
-            .antMatchers(HttpMethod.GET, "/rest/catalog/**").permitAll()
-            .antMatchers("/rest/catalog/**").hasRole("ADMIN")
-            .antMatchers("/rest/user/authenticate").permitAll()
-            //.antMatchers("/rest/user/**").hasRole("ADMIN")
-            .and()
-            .addFilter(new JwtInterceptingFilter())
-            .sessionManagement()
-            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.GET, "/rest/catalog/**").permitAll()
+                .antMatchers("/rest/catalog/**").hasRole("ADMIN").antMatchers("/rest/user/**").permitAll()
+                // .antMatchers("/rest/user/**").hasRole("ADMIN")
+                .and().addFilter(new JwtInterceptingFilter()).sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Bean

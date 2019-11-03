@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author Omar IRAQI
  */
 public interface UserRepository extends CrudRepository<User, Long>{
-    
+    User findByUsername(String username);
 }

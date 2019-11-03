@@ -18,20 +18,47 @@ public class UserService {
     @Autowired
     AuthorityRepository authorityRepository;
 
-    public void create(String username, String password, String firstName,
-        String lastName, String emailAddress, String address) {
-        
-        User user = new User(username, password, firstName, lastName, emailAddress, address);
-        Authority authority = new Authority(username, "ROLE_USER");
-        userRepository.save(user);
-        authorityRepository.save(authority);
+    public boolean createSuperAdmin(String username, String password, String firstName, String lastName,
+            String emailAddress, String address) {
+
+        if (!authorityRepository.findByAuthority("ROLE_SUPERADMIN").isEmpty())
+            return false;
+
+        String[] authorities = { "ROLE_SUPERADMIN" };
+        create(username, password, firstName, lastName, emailAddress, address, authorities);
+        return true;
     }
 
-    public void update(long userId, String password, String newPassword,
-        String firstName, String lastName, String emailAddress, String address) {      
+    public void createAdmin(String username, String password, String firstName, String lastName, String emailAddress,
+            String address) {
+
+        String[] authorities = { "ROLE_ADMIN", "ROLE_USER" };
+        create(username, password, firstName, lastName, emailAddress, address, authorities);
+    }
+
+    public void createUser(String username, String password, String firstName, String lastName, String emailAddress,
+            String address) {
+
+        String[] authorities = { "ROLE_USER" };
+        create(username, password, firstName, lastName, emailAddress, address, authorities);
+    }
+
+    private void create(String username, String password, String firstName, String lastName, String emailAddress,
+            String address, String[] authorities) {
+
+        User user = new User(username, password, firstName, lastName, emailAddress, address);
+        userRepository.save(user);
+        for (String auth : authorities) {
+            Authority authority = new Authority(username, auth);
+            authorityRepository.save(authority);
+        }
+    }
+
+    public void update(long userId, String password, String newPassword, String firstName, String lastName,
+            String emailAddress, String address) {
         User user = userRepository.findById(userId).get();
-        if (password != null && (newPassword == null ||
-            !(new BCryptPasswordEncoder().encode(password).equals(user.getPassword())))) {
+        if (password != null && (newPassword == null
+                || !(new BCryptPasswordEncoder().encode(password).equals(user.getPassword())))) {
             return;
         }
 
@@ -45,7 +72,7 @@ public class UserService {
             user.setEmailAddress(emailAddress);
         if (address != null)
             user.setAddress(address);
-        
+
         userRepository.save(user);
     }
 }

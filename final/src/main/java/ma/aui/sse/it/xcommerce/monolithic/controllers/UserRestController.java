@@ -27,25 +27,41 @@ public class UserRestController {
 
     @PostMapping("/authenticate")
     public String authenticate(@RequestBody User dto) {
+        System.out.println(dto.getUsername());
+        System.out.println(dto.getPassword());
         Authentication authentication = authenticationManager
-                .authenticate(new UsernamePasswordAuthenticationToken(
-                    dto.getUsername(), dto.getPassword()));
-
+                .authenticate(new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword()));
+        System.out.println("Hi!!!");
         return JwtHelper.generateToken(authentication);
-        
     }
 
-    @PostMapping("/")
-    public User create(@RequestBody User dto) {
-        if (dto.getUsername() == null || dto.getPassword() == null || dto.getFirstName() == null
-                || dto.getLastName() == null || dto.getEmailAddress() == null || dto.getAddress() == null)
-            throw new RuntimeException();
+    @PostMapping("/superAdmin")
+    public boolean createSuperAdmin(@RequestBody User dto) {
+        if (!check(dto))
+            return false;
 
-        userService.create(dto.getUsername(), dto.getPassword(), dto.getFirstName(), dto.getLastName(),
+        return userService.createSuperAdmin(dto.getUsername(), dto.getPassword(), dto.getFirstName(), dto.getLastName(),
                 dto.getEmailAddress(), dto.getAddress());
+    }
 
-        return new User(dto.getUsername(), null, dto.getFirstName(), dto.getLastName(), dto.getEmailAddress(),
-                dto.getAddress());
+    @PostMapping("/admin")
+    public boolean createAdmin(@RequestBody User dto) {
+        if (!check(dto))
+            return false;
+
+        userService.createAdmin(dto.getUsername(), dto.getPassword(), dto.getFirstName(), dto.getLastName(),
+                dto.getEmailAddress(), dto.getAddress());
+        return true;
+    }
+
+    @PostMapping
+    public boolean createUser(@RequestBody User dto) {
+        if (!check(dto))
+            return false;
+
+        userService.createUser(dto.getUsername(), dto.getPassword(), dto.getFirstName(), dto.getLastName(),
+                dto.getEmailAddress(), dto.getAddress());
+        return true;
     }
 
     @PatchMapping("/{userId}")
@@ -58,5 +74,10 @@ public class UserRestController {
 
         return new User(dto.getUsername(), null, dto.getFirstName(), dto.getLastName(), dto.getEmailAddress(),
                 dto.getAddress());
+    }
+
+    private boolean check(User dto) {
+        return (dto.getUsername() != null && dto.getPassword() != null && dto.getFirstName() != null
+                && dto.getLastName() != null && dto.getEmailAddress() != null && dto.getAddress() != null);
     }
 }

@@ -116,12 +116,12 @@ public class Product extends AbstractEntity {
         if(other == null || !(other instanceof Product))
             return false;
         
-        return id.longValue() == ((Product)other).getId().longValue();
+        return getId().longValue() == ((Product)other).getId().longValue();
     }
 
     @Override
     public int hashCode(){
-        return (int)id.longValue();
+        return (int)getId().longValue();
     }
 
     /**
