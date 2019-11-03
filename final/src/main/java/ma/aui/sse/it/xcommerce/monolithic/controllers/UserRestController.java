@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.dtos.User;
-import ma.aui.sse.it.xcommerce.monolithic.infra.JwtHelper;
+import ma.aui.sse.it.xcommerce.monolithic.security.JwtHelper;
 import ma.aui.sse.it.xcommerce.monolithic.services.UserService;
 
 @RestController

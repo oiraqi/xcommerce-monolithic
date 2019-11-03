@@ -1,4 +1,4 @@
-package ma.aui.sse.it.xcommerce.monolithic.infra;
+package ma.aui.sse.it.xcommerce.monolithic.security;
 
 import java.io.IOException;
 

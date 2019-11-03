@@ -8,7 +8,7 @@ import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.User;
-import ma.aui.sse.it.xcommerce.monolithic.infra.UserAuditor;
+import ma.aui.sse.it.xcommerce.monolithic.security.UserAuditor;
 
 @SpringBootApplication
 @EnableJpaAuditing
