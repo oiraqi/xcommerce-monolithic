@@ -26,10 +26,6 @@ public class UserAuditor implements AuditorAware<User> {
 
         String username = (String)authentication.getPrincipal();
         System.out.println("username: " + username);
-        User user = userRepository.findByUsername(username);
-        if(user != null)
-            return Optional.of(user);
-        
-        return null;
+        return Optional.ofNullable(userRepository.findByUsername(username));
     }
 }
