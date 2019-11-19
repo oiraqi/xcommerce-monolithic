@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import io.micrometer.core.lang.NonNull;
 
 @Entity
-public class Authority extends AbstractEntity {
+public class Authority extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

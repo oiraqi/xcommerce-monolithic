@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.test.context.support.WithMockUser;
 
-import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
+import ma.aui.sse.it.xcommerce.monolithic.data.dtos.Product;
 import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
 import ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService;
 
@@ -31,6 +31,7 @@ public class ShoppingCartRestController {
         //Retrieve userId from JWT-based security context
         //auth.getPrinciple()
         long userId = 1; //To be removed
+        System.out.println(shoppingCartService);
         return shoppingCartService.getShoppingCart(userId);
     }
 
@@ -51,7 +52,7 @@ public class ShoppingCartRestController {
         //auth.getPrinciple()
         long userId = 1; //To be removed
         ShoppingCart shoppingCart = shoppingCartService.getShoppingCart(userId);
-        return shoppingCartService.removeProduct(shoppingCart, userId, dto.getId(),
+        return shoppingCartService.decreaseProductQuantity(shoppingCart, userId, dto.getId(),
                                                     dto.getQuantity());
     }
 

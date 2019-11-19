@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * @author Omar IRAQI
  */
 @Entity
-public class OrderLine extends AbstractEntity{
+public class OrderLine extends BaseEntity {
 
     private static final long serialVersionUID = -2465717954068251960L;
 

@@ -26,22 +26,10 @@ public class UserRestController {
     UserService userService;
 
     @PostMapping("/authenticate")
-    public String authenticate(@RequestBody User dto) {
-        System.out.println(dto.getUsername());
-        System.out.println(dto.getPassword());
+    public String authenticate(@RequestBody User dto) {        
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword()));
-        System.out.println("Hi!!!");
         return JwtHelper.generateToken(authentication);
-    }
-
-    @PostMapping("/superAdmin")
-    public boolean createSuperAdmin(@RequestBody User dto) {
-        if (!check(dto))
-            return false;
-
-        return userService.createSuperAdmin(dto.getUsername(), dto.getPassword(), dto.getFirstName(), dto.getLastName(),
-                dto.getEmailAddress(), dto.getAddress());
     }
 
     @PostMapping("/admin")

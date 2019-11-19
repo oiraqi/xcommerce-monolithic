@@ -8,7 +8,6 @@ package ma.aui.sse.it.xcommerce.monolithic.data.repositories;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
@@ -18,7 +17,7 @@ import ma.aui.sse.it.xcommerce.monolithic.data.entities.Product;
  * @author Omar IRAQI
  */
 @RepositoryRestResource
-public interface ProductRepository extends CrudRepository<Product, Long> {
+public interface ProductRepository extends BaseRepository<Product> {
         
         @Query("select p from Product p where p.name like %?1%")
         List<Product> findByName(String name);

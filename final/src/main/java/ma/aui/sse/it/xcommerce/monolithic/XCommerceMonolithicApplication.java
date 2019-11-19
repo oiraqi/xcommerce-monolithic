@@ -5,13 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.AuditorAware;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+//import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import ma.aui.sse.it.xcommerce.monolithic.data.entities.User;
 import ma.aui.sse.it.xcommerce.monolithic.security.UserAuditor;
 
 @SpringBootApplication
-@EnableJpaAuditing
+//@EnableJpaAuditing(auditorAwareRef = "auditorProvider")
 @EnableCaching
 public class XCommerceMonolithicApplication {
 

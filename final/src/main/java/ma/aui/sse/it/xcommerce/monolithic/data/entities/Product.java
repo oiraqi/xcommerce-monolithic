@@ -12,7 +12,7 @@ import java.util.List;
  * @author Omar IRAQI
  */
 @Entity
-public class Product extends AbstractEntity {
+public class Product extends BaseEntity {
     
     private static final long serialVersionUID = 730736845770996539L;
 

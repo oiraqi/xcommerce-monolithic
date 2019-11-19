@@ -27,11 +27,13 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     }
 
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable().authorizeRequests().antMatchers(HttpMethod.GET, "/rest/catalog/**").permitAll()
-                .antMatchers("/rest/catalog/**").hasRole("ADMIN").antMatchers("/rest/user/**").permitAll()
-                // .antMatchers("/rest/user/**").hasRole("ADMIN")
-                .and().addFilter(new JwtInterceptingFilter()).sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.csrf().disable().authorizeRequests()
+            .antMatchers("/rest/user/admin").hasRole("SUPERADMIN")
+            .antMatchers("/rest/user/authenticate").permitAll()
+            .antMatchers(HttpMethod.GET, "/rest/catalog/**").permitAll()
+            .antMatchers("/rest/catalog/**").hasRole("ADMIN")
+            .and().addFilter(new JwtInterceptingFilter()).sessionManagement()
+            .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Bean

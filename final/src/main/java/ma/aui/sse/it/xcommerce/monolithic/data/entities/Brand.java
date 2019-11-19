@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  * @author Omar IRAQI
  */
 @Entity
-public class Brand extends AbstractEntity {
+public class Brand extends BaseEntity {
     
     private static final long serialVersionUID = -7014503160098567776L;
 

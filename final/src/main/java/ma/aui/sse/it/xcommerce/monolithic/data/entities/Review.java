@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;;
  * @author Omar IRAQI
  */
 @Entity
-public class Review extends AbstractEntity {
+public class Review extends BaseEntity {
 
     private static final long serialVersionUID = 8080148085913683937L;
 

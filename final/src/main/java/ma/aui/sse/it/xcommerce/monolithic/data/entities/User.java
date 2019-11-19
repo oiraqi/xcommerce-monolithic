@@ -11,7 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  */
 @Entity
 @Table(name="\"user\"")
-public class User extends AbstractEntity{
+public class User extends BaseEntity {
 
     private static final long serialVersionUID = -2323571384056059081L;
 
@@ -20,8 +20,6 @@ public class User extends AbstractEntity{
 
     @NotNull
     protected String password;
-
-    protected transient String newPassword;
     
     @NotNull
     protected String firstName;
@@ -99,13 +97,5 @@ public class User extends AbstractEntity{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getNewPassword() {
-        return newPassword;
-    }
-
-    public void setNewPassword(String newPassword) {
-        this.newPassword = newPassword;
     }
 }

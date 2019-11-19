@@ -20,7 +20,7 @@ import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
  */
 @Entity
 @Table(name="\"order\"")
-public class Order extends AbstractEntity{
+public class Order extends BaseEntity {
     
     private static final long serialVersionUID = 3959935433240472748L;
 

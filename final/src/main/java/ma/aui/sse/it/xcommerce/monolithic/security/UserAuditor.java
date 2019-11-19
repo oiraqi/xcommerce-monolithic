@@ -16,6 +16,7 @@ public class UserAuditor implements AuditorAware<User> {
     @Autowired
     UserRepository userRepository;
 
+    @Override
     public Optional<User> getCurrentAuditor() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 

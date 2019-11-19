@@ -14,7 +14,7 @@ import javax.persistence.MappedSuperclass;
  */
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-public abstract class AbstractEntity extends AbstractAuditable<User,Long> implements Serializable{
+public abstract class BaseEntity extends AbstractAuditable<User,Long> implements Serializable{
 
     private static final long serialVersionUID = -1152317130147556701L;
 
