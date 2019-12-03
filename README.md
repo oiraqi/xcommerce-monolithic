@@ -3,7 +3,7 @@ This is the server-side of the enterprise-class XCommerce application based on a
 
 The overarching XCommerce project is accessible here: https://github.com/oiraqi/xcommerce. Other sibiling sub-projects are:
 - XCommerce Microservices: https://github.com/oiraqi/xcommerce-microservices
-- XCommerce PWA Angular: https://github.com/oiraqi/xcommerce-web-angular
+- XCommerce PWA Angular: https://github.com/oiraqi/xcommerce-client-angular
 
 **You're welcome to contrbute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
 
