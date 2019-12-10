@@ -22,6 +22,12 @@ public class Product extends BaseEntity {
     @NotNull
     private String name;
 
+    @NotNull
+    private String description;
+
+    @NotNull
+    private String image;
+
     @ManyToOne
     @NotNull
     private Brand brand;
@@ -144,5 +150,21 @@ public class Product extends BaseEntity {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
