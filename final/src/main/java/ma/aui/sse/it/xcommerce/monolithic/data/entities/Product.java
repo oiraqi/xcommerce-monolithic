@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Entity
 public class Product extends BaseEntity {
-    
+
     private static final long serialVersionUID = 730736845770996539L;
 
     @NotNull
@@ -47,9 +47,11 @@ public class Product extends BaseEntity {
     private int quantity;
     private float weight;
 
-    protected Product() { }
+    protected Product() {
+    }
 
-    public Product(String name, String barcode, Brand brand, Category category, float price, int quantity, float weight) {
+    public Product(String name, String barcode, Brand brand, Category category, float price, int quantity,
+            float weight) {
         this.name = name;
         this.barcode = barcode;
         this.brand = brand;
@@ -118,16 +120,16 @@ public class Product extends BaseEntity {
     }
 
     @Override
-    public boolean equals(Object other){
-        if(other == null || !(other instanceof Product))
+    public boolean equals(Object other) {
+        if (other == null || !(other instanceof Product))
             return false;
-        
-        return getId().longValue() == ((Product)other).getId().longValue();
+
+        return getId().longValue() == ((Product) other).getId().longValue();
     }
 
     @Override
-    public int hashCode(){
-        return (int)getId().longValue();
+    public int hashCode() {
+        return (int) getId().longValue();
     }
 
     /**

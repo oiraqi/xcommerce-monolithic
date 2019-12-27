@@ -27,9 +27,10 @@ public class OrderLine extends BaseEntity {
     private float unitPrice;
     private transient float price;
 
-    protected OrderLine(){ }
+    protected OrderLine() {
+    }
 
-    public OrderLine(Order order, Product product, int quantity){
+    public OrderLine(Order order, Product product, int quantity) {
         this.order = order;
         this.product = product;
         this.quantity = quantity;
@@ -38,9 +39,9 @@ public class OrderLine extends BaseEntity {
         price = unitPrice * (1 - discount / 100) * quantity;
     }
 
-    /*public Order getOrder() {
-        return order;
-    }*/
+    /*
+     * public Order getOrder() { return order; }
+     */
 
     public float getPrice() {
         return price;

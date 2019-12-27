@@ -1,6 +1,5 @@
 package ma.aui.sse.it.xcommerce.monolithic.data.entities;
 
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;;
@@ -17,15 +16,16 @@ public class Review extends BaseEntity {
     @ManyToOne
     @NotNull
     private Product product;
-    
+
     @NotNull
     private String eval;
 
     private float grade;
 
-    protected Review(){ }
+    protected Review() {
+    }
 
-    public Review(String eval, float grade, Product product){
+    public Review(String eval, float grade, Product product) {
         this.eval = eval;
         this.grade = grade;
         this.product = product;
@@ -49,5 +49,5 @@ public class Review extends BaseEntity {
 
     public Product getProduct() {
         return product;
-    }    
+    }
 }

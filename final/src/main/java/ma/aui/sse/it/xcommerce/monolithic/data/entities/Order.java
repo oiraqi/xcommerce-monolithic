@@ -19,9 +19,9 @@ import ma.aui.sse.it.xcommerce.monolithic.data.dtos.ShoppingCart;
  * @author Omar IRAQI
  */
 @Entity
-@Table(name="\"order\"")
+@Table(name = "\"order\"")
 public class Order extends BaseEntity {
-    
+
     private static final long serialVersionUID = 3959935433240472748L;
 
     @ManyToOne
@@ -34,15 +34,16 @@ public class Order extends BaseEntity {
     protected OrderStatus status;
     protected float productsTotalPrice;
     protected float shippingCost;
-    protected static final float TAX_RATE = (float)0.2;
+    protected static final float TAX_RATE = (float) 0.2;
 
-	protected Order(){ }
+    protected Order() {
+    }
 
-    public Order(ShoppingCart shoppingCart, User user){
+    public Order(ShoppingCart shoppingCart, User user) {
         this.user = user;
-        if(shoppingCart.getSelectedProducts() != null){
+        if (shoppingCart.getSelectedProducts() != null) {
             Iterator<Entry<Product, Integer>> it = shoppingCart.getSelectedProducts().entrySet().iterator();
-            while(it.hasNext()){
+            while (it.hasNext()) {
                 Entry<Product, Integer> e = it.next();
                 new OrderLine(this, e.getKey(), e.getValue());
             }
@@ -52,11 +53,11 @@ public class Order extends BaseEntity {
         status = OrderStatus.HANDLING;
     }
 
-    public void updateStatus(OrderStatus newStatus) throws IllegalStatusChangeException{
-        if(status == OrderStatus.CANCELED || status == OrderStatus.DELIVERED)
+    public void updateStatus(OrderStatus newStatus) throws IllegalStatusChangeException {
+        if (status == OrderStatus.CANCELED || status == OrderStatus.DELIVERED)
             throw new IllegalStatusChangeException(newStatus);
         status = newStatus;
-        //use JavaMail API to send a notification to the customer by email
+        // use JavaMail API to send a notification to the customer by email
     }
 
     public User getUser() {
@@ -67,19 +68,19 @@ public class Order extends BaseEntity {
         return status;
     }
 
-    public float getProductsTotalPrice(){
+    public float getProductsTotalPrice() {
         return productsTotalPrice;
     }
 
-    public void setProductsTotalPrice(float productsTotalPrice){
+    public void setProductsTotalPrice(float productsTotalPrice) {
         this.productsTotalPrice = productsTotalPrice;
     }
 
-    public float getShippingCost(){
+    public float getShippingCost() {
         return shippingCost;
     }
 
-    public void setShippingCost(float shippingCost){
+    public void setShippingCost(float shippingCost) {
         this.shippingCost = shippingCost;
     }
 

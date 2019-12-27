@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Category extends BaseEntity {
-    
+
     private static final long serialVersionUID = 512632343574588379L;
 
     @NotNull
@@ -30,15 +30,16 @@ public class Category extends BaseEntity {
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Product> products;
-    
-    protected Category(){ }
 
-    public Category(String name, Category parentCategory){
+    protected Category() {
+    }
+
+    public Category(String name, Category parentCategory) {
         this.name = name;
         this.parentCategory = parentCategory;
     }
 
-    public Category(String name){
+    public Category(String name) {
         this(name, null);
     }
 
@@ -46,11 +47,11 @@ public class Category extends BaseEntity {
         return name;
     }
 
-    public Category getParentCategory(){
+    public Category getParentCategory() {
         return parentCategory;
     }
 
-    public void setParentCategory(Category parentCategory){
+    public void setParentCategory(Category parentCategory) {
         this.parentCategory = parentCategory;
     }
 

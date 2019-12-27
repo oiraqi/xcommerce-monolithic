@@ -10,7 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
  * @author Omar IRAQI
  */
 @Entity
-@Table(name="\"user\"")
+@Table(name = "\"user\"")
 public class User extends BaseEntity {
 
     private static final long serialVersionUID = -2323571384056059081L;
@@ -20,7 +20,7 @@ public class User extends BaseEntity {
 
     @NotNull
     protected String password;
-    
+
     @NotNull
     protected String firstName;
 
@@ -32,11 +32,12 @@ public class User extends BaseEntity {
 
     @NotNull
     protected String address;
-        
-    protected User(){ }
 
-    public User(String username, String password, String firstName, String lastName,
-                String emailAddress, String address){
+    protected User() {
+    }
+
+    public User(String username, String password, String firstName, String lastName, String emailAddress,
+            String address) {
         this.username = username;
         this.password = new BCryptPasswordEncoder().encode(password);
         this.firstName = firstName;

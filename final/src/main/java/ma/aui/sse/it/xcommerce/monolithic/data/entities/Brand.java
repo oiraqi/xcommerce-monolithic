@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 public class Brand extends BaseEntity {
-    
+
     private static final long serialVersionUID = -7014503160098567776L;
 
     @NotNull
@@ -23,10 +23,11 @@ public class Brand extends BaseEntity {
     @OneToMany(mappedBy = "brand", fetch = FetchType.LAZY)
     @OrderBy("name asc")
     private List<Product> products;
-    
-    protected Brand(){ }
 
-    public Brand(String name){
+    protected Brand() {
+    }
+
+    public Brand(String name) {
         this.name = name;
     }
 
