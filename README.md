@@ -1,9 +1,10 @@
 # XCommerce Monolithic - Spring
 This is the server-side of the enterprise-class XCommerce application based on a monolithic-mvc-soa architecture. It is written in Java and leverages Spring Boot as a highly productive, opinionated enterprise application development and production environment. Spring Boot orchestrates several technologies powering XCommerce Monolithic, namely JPA, Hibernare, PostgreSQL, Redis, REST and JWT.
 
-The overarching XCommerce project is accessible here: https://github.com/oiraqi/xcommerce. Other sibiling sub-projects are:
-- XCommerce Microservices: https://github.com/oiraqi/xcommerce-microservices
-- XCommerce PWA Angular: https://github.com/oiraqi/xcommerce-client-angular
+This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce) project. Other sibiling sub-projects are:
+- [XCommerce Standalone (C)](https://github.com/oiraqi/xcommerce-standalone-c)
+- [XCommerce Cloud Microservices (Spring Cloud)](https://github.com/oiraqi/xcommerce-microservices)
+- [XCommerce PWA (Angular)](https://github.com/oiraqi/xcommerce-client-angular)
 
 **You're welcome to contrbute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
 
