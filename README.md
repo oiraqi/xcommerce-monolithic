@@ -6,9 +6,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 - [XCommerce Cloud Microservices (Spring Cloud)](https://github.com/oiraqi/xcommerce-microservices)
 - [XCommerce PWA (Angular)](https://github.com/oiraqi/xcommerce-client-angular)
 
-**You're welcome to contrbute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
-
-**The *progress* folder**: In every semester, the author rewrites the code with his students. The *progress* folder reflects where they are now. It is reinitialized in the beginning of each Fall (September 1st) and Spring (January 1st).
+**You're welcome to contribute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
 
 **Starting point**
 - Clone this repository
