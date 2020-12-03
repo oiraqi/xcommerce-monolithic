@@ -10,12 +10,15 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 ## Requirements
 ### Functional Requirements
 ### Non-functional Requirements
-- **Performance**: 
-- **Scalability**: 
-- **Security**:
+- **Performance**
+  - Response time shall not exceed 200 ms
+- **Scalability**
+  - The system shall scale *out* to preserve performance even when the load grows, at a reasonable cost
+- **Security**
   - The confidentiality and integrity of all data traffic shall be protected
   - The authenticity of both the client and the server shall be ensured
   - User access shall be restricted to own account, orders and history
+  - Service high availability shall be ensured, i.e., single points of failure shall be avoided
 
 ## Architecture
 
