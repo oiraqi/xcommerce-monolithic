@@ -7,6 +7,11 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 - [XCommerce PWA (Angular)](https://github.com/oiraqi/xcommerce-client-angular)
 
 **You're welcome to contribute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
+## Requirements
+### Functional Requirements
+### Non-functional Requirements
+
+## Architecture
 
 ## Design
 ### Class Diagrams
