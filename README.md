@@ -9,6 +9,26 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 **You're welcome to contribute through your favourite monolithic or microservices back-end technology and/or front-end technology!**
 ## Requirements
 ### Functional Requirements
+- **Roles / Actors**
+  - There are three roles / types of actors: customer, back office staff, admin
+- **Customer Functionalities**
+  - A customer shall be able to browse products by brand and category
+  - A customer shall be able to search for products by (part of) name
+  - A customer shall be able to create an account (customer role)
+  - A customer shall be able to add and remove products to his/her shopping cart, which should be accessible through different devices
+  - A customer shall be able to place an order
+  - A customer shall be able to keep track of placed orders
+- **Back Office Staff Functionalities**
+  - A back office admin shall be able to add, update and deactivate brands
+  - A back office admin shall be able to add, update and deactivate categories. A category may have zero or 1 parent, as well as several sub categories
+  - A back office admin shall be able to add, update and deactivate products
+  - A back office admin shall be able to browse orders
+  - A back office admin shall be able to change the status of an order
+- **Admin Functionalities**
+  - A default admin shall be created automatically
+  - An admin shall be ableto create other admin accounts, as well as back office staff accounts
+  
+
 ### Non-functional Requirements
 - **Performance**
   - The system shall allow the client to pass Google Lighthouse performance test with at least 80% 
