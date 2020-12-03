@@ -12,7 +12,10 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 ### Non-functional Requirements
 - **Performance**: 
 - **Scalability**: 
-- **Security**: 
+- **Security**:
+-- The confidentiality and integrity of all data traffic shall be protected
+-- The authenticity of both the client and the server shall be ensured
+-- User access shall be restricted to own account, orders and history
 
 ## Architecture
 
