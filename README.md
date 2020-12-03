@@ -23,6 +23,25 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
   - The system shall allow currency conversion of prices depending on user preferences by integrating with an external currency converter web service 
 
 ## Architecture
+- **Physical Architecture - Initial**
+<p align="center">
+  <img src="final/architecture/architecture1.png">
+</p>
+
+- **Physical Architecture - Protocols & Software**
+<p align="center">
+  <img src="final/architecture/architecture1b.png">
+</p>
+
+- **Physical Architecture - Resilient (No SPoF) / Scalable**
+<p align="center">
+  <img src="final/architecture/architecture2.png">
+</p>
+
+- **Logical Architecture - Inside Spring Boot**
+<p align="center">
+  <img src="final/architecture/architecture3.png">
+</p>
 
 ## Design
 ### Class Diagrams
