@@ -10,23 +10,23 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 
 ## Design
 ### Class Diagrams
-**Entity Class Diagram**
+- **Entity Class Diagram**
 <p align="center">
   <img src="final/design/class-diagrams/EntityClassDiagram.png">
 </p>
 
-**Repositories and Services Class Diagram**
+- **Repositories and Services Class Diagram**
 <p align="center">
   <img src="final/design/class-diagrams/RepositoriesServicesClassDiagram.png">
 </p>
 
 ### Sequence Diagrams
-**Data-driven Sequence Diagram**
+- **Data-driven Sequence Diagram**
 <p align="center">
   <img src="final/design/sequence-diagrams/DataDrivenSequenceDiagram.png">
 </p>
 
-**Service-driven Sequence Diagram**
+- **Service-driven Sequence Diagram**
 <p align="center">
   <img src="final/design/sequence-diagrams/ServiceDrivenSequenceDiagram.png">
 </p>
