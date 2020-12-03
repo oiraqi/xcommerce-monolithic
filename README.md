@@ -10,6 +10,9 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 ## Requirements
 ### Functional Requirements
 ### Non-functional Requirements
+- **Performance**: 
+- **Scalability**: 
+- **Security**: 
 
 ## Architecture
 
