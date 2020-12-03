@@ -10,7 +10,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 
 **Starting point**
 - Clone this repository
-- Depending on the stage you would like to work on, cd [ *initial* | *progress* | *final* ]
+- cd final
 - ./gradlew build
 - There you go!
 
