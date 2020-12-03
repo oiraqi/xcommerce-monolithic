@@ -11,7 +11,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 ### Functional Requirements
 ### Non-functional Requirements
 - **Performance**
-  - Response time shall not exceed 200 ms
+  - The system shall allow the client to pass Google Lighthouse performance test with at least 80% 
 - **Scalability**
   - The system shall scale *out* to preserve performance even when the load grows, at a reasonable cost
 - **Security**
