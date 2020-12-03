@@ -18,7 +18,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
   - The confidentiality and integrity of all data traffic shall be protected
   - The authenticity of both the client and the server shall be ensured
   - User access shall be restricted to own account, orders and history
-  - Service high availability shall be ensured, i.e., single points of failure shall be avoided
+  - Service high availability shall be ensured, i.e., no single point of failure (SPoF) shall be accepted
 - **Integration**
   - The system shall allow currency conversion of prices depending on user preferences by integrating with an external currency converter web service 
 

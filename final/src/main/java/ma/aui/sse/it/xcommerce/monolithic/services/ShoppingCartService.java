@@ -20,33 +20,33 @@ public class ShoppingCartService {
     private ProductRepository productRepository;
 
     @Cacheable(value = "ShoppingCart")
-    public ShoppingCart getShoppingCart(long userId){
+    public ShoppingCart getShoppingCart(long userId) {
         return new ShoppingCart();
     }
 
     @CachePut(value = "ShoppingCart", key = "#userId")
-    public ShoppingCart addProduct(ShoppingCart shoppingCart, long userId, long productId, int quantity){
+    public ShoppingCart addProduct(ShoppingCart shoppingCart, long userId, long productId, int quantity) {
         Product product = productRepository.findById(productId).get();
         shoppingCart.addProduct(product, quantity);
         return shoppingCart;
     }
 
     @CachePut(value = "ShoppingCart", key = "#userId")
-    public ShoppingCart decreaseProductQuantity(ShoppingCart shoppingCart, long userId, long productId, int quantity){
+    public ShoppingCart decreaseProductQuantity(ShoppingCart shoppingCart, long userId, long productId, int quantity) {
         Product product = productRepository.findById(productId).get();
         shoppingCart.removeProduct(product, quantity);
         return shoppingCart;
     }
 
     @CachePut(value = "ShoppingCart", key = "#userId")
-    public ShoppingCart removeProduct(ShoppingCart shoppingCart, long userId, long productId){
+    public ShoppingCart removeProduct(ShoppingCart shoppingCart, long userId, long productId) {
         Product product = productRepository.findById(productId).get();
         shoppingCart.removeProduct(product);
         return shoppingCart;
     }
 
     @CachePut(value = "ShoppingCart", key = "#userId")
-    public ShoppingCart empty(ShoppingCart shoppingCart, long userId){
+    public ShoppingCart empty(ShoppingCart shoppingCart, long userId) {
         shoppingCart.empty();
         return shoppingCart;
     }
