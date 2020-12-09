@@ -18,6 +18,8 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
   - A customer shall be able to add and remove products to his/her shopping cart, which should be accessible through different devices
   - A customer shall be able to place an order
   - A customer shall be able to keep track of placed orders
+  - A customer shall be able to review products
+  - A customer shall be able to consult product reviews by other customers
 - **Back Office Staff Functionalities**
   - A back office admin shall be able to add, update and deactivate brands
   - A back office admin shall be able to add, update and deactivate categories. A category may have zero or 1 parent, as well as several sub categories
