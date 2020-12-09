@@ -58,7 +58,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
   <img src="final/architecture/architecture2.png">
 </p>
 
-- **Logical Architecture - Inside Spring Boot**
+- **Logical Architecture - Inside an Application Server**
 <p align="center">
   <img src="final/architecture/architecture3.png">
 </p>
