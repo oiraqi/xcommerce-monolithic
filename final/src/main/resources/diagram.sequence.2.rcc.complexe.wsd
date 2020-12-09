@@ -5,8 +5,8 @@ participant "REST\nController" as Controller
 participant Service as Service
 participant Repository_i as Rep_i
 participant Repository_j as Rep_j
-collections Entities_i as Ent_i
-collections Entities_j as Ent_j
+participant Entity_i as Ent_i
+participant Entity_j as Ent_j
 database Database as DB
 User -> Client : uses
 Client -> Controller : remotely calls

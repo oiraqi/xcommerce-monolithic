@@ -2,7 +2,7 @@
 actor User as User
 participant "Rich UI\nREST-capable\nClient" as Client
 participant "REST-auto-exposed\nRepository" as Repository
-collections Entities as Ent
+participant Entity as Ent
 database Database as DB
 User -> Client : uses
 Client -> Repository : remotely calls
