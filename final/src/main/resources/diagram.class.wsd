@@ -1,12 +1,13 @@
 @startuml EntityClassDiagram
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Product
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.User
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Authority
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Brand
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Category
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Order
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.OrderLine
-ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Review
+org.springframework.data.jpa.domain.AbstractAuditable <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Product
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.User
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Authority
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Brand
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Category
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Order
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.OrderLine
+ma.aui.sse.it.xcommerce.monolithic.data.entities.BaseEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Review
 ma.aui.sse.it.xcommerce.monolithic.data.entities.Brand "1" *-- "many" ma.aui.sse.it.xcommerce.monolithic.data.entities.Product : has
 ma.aui.sse.it.xcommerce.monolithic.data.entities.Product "1" *-- "many" ma.aui.sse.it.xcommerce.monolithic.data.entities.Review : has
 ma.aui.sse.it.xcommerce.monolithic.data.entities.Category "1" *-- "many" ma.aui.sse.it.xcommerce.monolithic.data.entities.Product : has
@@ -15,13 +16,14 @@ ma.aui.sse.it.xcommerce.monolithic.data.entities.Order "1" *-- "many" ma.aui.sse
 @enduml
 
 @startuml RepositoriesServicesClassDiagram
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.BrandRepository
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.CategoryRepository
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.AuthorityRepository
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.OrderRepository
-org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.ReviewRepository
+org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.BrandRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.CategoryRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.AuthorityRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.OrderRepository
+ma.aui.sse.it.xcommerce.monolithic.data.repositories.BaseRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.ReviewRepository
 ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository : uses
 ma.aui.sse.it.xcommerce.monolithic.services.OrderService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService : uses
 ma.aui.sse.it.xcommerce.monolithic.services.OrderService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository : uses
