@@ -1,6 +1,7 @@
 @startuml EntityClassDiagram
 ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Product
 ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.User
+ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Authority
 ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Brand
 ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Category
 ma.aui.sse.it.xcommerce.monolithic.data.entities.AbstractEntity <|-- ma.aui.sse.it.xcommerce.monolithic.data.entities.Order
@@ -18,10 +19,13 @@ org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.
 org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.BrandRepository
 org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.CategoryRepository
 org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository
+org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.AuthorityRepository
 org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.OrderRepository
 org.springframework.data.repository.CrudRepository <|-- ma.aui.sse.it.xcommerce.monolithic.data.repositories.ReviewRepository
 ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.ProductRepository : uses
 ma.aui.sse.it.xcommerce.monolithic.services.OrderService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.services.ShoppingCartService : uses
 ma.aui.sse.it.xcommerce.monolithic.services.OrderService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository : uses
 ma.aui.sse.it.xcommerce.monolithic.services.OrderService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.OrderRepository : uses
+ma.aui.sse.it.xcommerce.monolithic.services.UserService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.UserRepository : uses
+ma.aui.sse.it.xcommerce.monolithic.services.UserService "1" *-- "1" ma.aui.sse.it.xcommerce.monolithic.data.repositories.AuthorityRepository : uses
 @enduml
