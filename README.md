@@ -28,7 +28,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
   - A back office admin shall be able to change the status of an order
 - **Admin Functionalities**
   - A default admin shall be created automatically
-  - An admin shall be ableto create other admin accounts, as well as back office staff accounts
+  - An admin shall be able to create other admin accounts, as well as back office staff accounts
   
 
 ### Non-functional Requirements
