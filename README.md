@@ -37,12 +37,18 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
 - **Scalability**
   - The system shall scale *out* to preserve performance even when the load grows, at a reasonable cost
 - **Security**
-  - The confidentiality and integrity of all data traffic shall be protected
   - The authenticity of both the client and the server shall be ensured
+  - The confidentiality and integrity of all data traffic shall be protected
   - User access shall be restricted to own account, orders and history
+  - All user actions shall be tracked for accountabiliy, at both the service and the data levels
   - Service high availability shall be ensured, i.e., no single point of failure (SPoF) shall be accepted
-- **Integration**
-  - The system shall allow currency conversion of prices depending on user preferences by integrating with an external currency converter web service 
+- **Interoperability**
+  - The system shall allow currency conversion of prices depending on user preferences by integrating with an external currency converter web service
+- **Accessibility**
+  - The system shall be accessible through web and mobile, on different devices with different sizes
+  - Already accessed data shall remain accessible even when network connectivity is lost or disrupted
+- **Extensibility**
+  - The system shall allow smooth future extensions
 
 ## Architecture
 - **Physical Architecture - Initial**
