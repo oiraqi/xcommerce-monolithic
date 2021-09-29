@@ -15,7 +15,7 @@ This is part of the overarching [XCommerce](https://github.com/oiraqi/xcommerce)
   - A customer shall be able to browse products by brand and category
   - A customer shall be able to search for products by (part of) name
   - A customer shall be able to create an account (customer role)
-  - A customer shall be able to add and remove products to his/her shopping cart, which should be accessible through different devices
+  - A customer shall be able to add and remove products to his/her shopping cart, which shall be accessible through different devices
   - A customer shall be able to place an order
   - A customer shall be able to keep track of placed orders
   - A customer shall be able to review products
